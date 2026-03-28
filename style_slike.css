@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+body {
+  font-family: 'Abel', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-weight: 100;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.galerija h1{
+  color: darkblue;
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a.image-popup-vertical-fit {
+  cursor: -webkit-zoom-in;
+}
+
+.img-gallery-magnific {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.magnific-img {
+  width: 30%;
+  min-width: 250px;
+}
+
+.magnific-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.magnific-img img:hover {
+  transform: scale(1.03);
+}
+
+.magnific-img {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .magnific-img img {
+    transition: all 0.3s ease;
+  }
+
+.galerija h1 {
+
+  color: darkblue;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* dio za zoom i close*/
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px; /* tu sam promijenila izgled slike. 1. promjena*/
+  transform: scale(1.5);
+}
+.lightbox:target {
+  display: flex;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+}
+
+
+/* responzivnost */
+.galerija {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.galerija_slika {
+  width: 30%;
+}
+@media (max-width: 800px){
+  .galerija_slika {
+    width: 80%;
+  }
+}
+
+/* druga promjena na slikama sa w3schools*/
+.polaroid {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2),
+              0 6px 20px rgba(0,0,0,0.19);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.polaroid img {
+  width: 100%;
+  display: block;
+}
+.polaroid .container {
+  text-align: center;
+  padding: 10px;
+}
+.polaroid:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+.polaroid p{
+  text-align: center;
+}

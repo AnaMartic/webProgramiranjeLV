@@ -1,0 +1,148 @@
+:root {
+    --primary-bg: #f4f4f4;
+    --dark-bg: #222;
+    --accent-brown: #754040;
+    --accent-blue: #4f65c5;
+    --accent-blue-hover: #34448b;
+    --text-white: white;
+    --transition-speed: 0.2s;
+    --transition-slow: 0.3s;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-bg);
+    text-align: center;
+}
+header {
+    background: var(--dark-bg);
+    color: var(--text-white);
+    padding: 20px;
+}
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-white);
+    font-weight: bold;
+}
+.navbar{
+    background-color: var(--accent-brown);
+}
+nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    background-color: var(--accent-brown);
+}
+nav li{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+nav a{
+    color: var(--text-white);
+    text-decoration: none;
+}
+nav li:hover{
+    transition: var(--transition-speed);
+    transform: scale(1.1);
+}
+#menu-toggle{
+    display: none;
+}
+.menu-btn{
+    display: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: var(--accent-brown);
+    color: var(--text-white);
+}
+@media(max-width: 800px){
+    nav ul{
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menu-btn{
+        display: block;
+    }
+
+    #menu-toggle:checked ~ nav ul{
+        max-height: 300px; /* dovoljno visoko */
+        opacity: 1;
+    }
+}
+
+.chart{
+    display: flex;
+    align-items: flex-end; /* stupci idu od dna prema gore */
+    justify-content: center;
+    gap: 15px;
+    margin-top: 300px;
+    height:350px; /* visina grafa */
+    margin-top: 150px;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.bar{
+    width: 50px;
+    background-color: var(--accent-blue);
+    color: var(--text-white);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 8px 8px 0 0;
+    padding-bottom: 5px;
+    transition: var(--transition-slow);
+
+    animation: growBar 1s ease-out;
+    transform-origin: bottom;
+}
+
+/* kljucna rijec za korake animacije*/
+/* from - kada animacija tek pocne a to - kada zavrsi*/
+/* scaleY el po vertikali je 0 u pocetku a dostic ce 1 tj punu velicinu */
+@keyframes growBar {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+}
+
+.bar:hover{
+    background-color: var(--accent-blue-hover);
+    transform: scale(1.05);
+}
+
+.column span{
+    margin-top: 8px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
