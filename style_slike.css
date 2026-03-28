@@ -5,6 +5,7 @@ header {
     background: #222;
     color: white;
     padding: 20px;
+    font-family: Arial, sans-serif;
 }
 
 .nav-menu {
@@ -46,6 +47,7 @@ nav li{
 nav a{
     color: white;
     text-decoration: none;
+    font-family: Arial, sans-serif;
 }
 nav li:hover{
     transition: 0.2s;
